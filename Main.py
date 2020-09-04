@@ -1,9 +1,6 @@
 #HANGMAN Virtual Learning Edition
 
-#User will input when they are ready to start and 
-# the game will randomly generate 1 of 13 words related to virtual learning. 
-#The game will then ask the user to enter a letter and output an updated "_ _ _ _" type template
-#The game will give the user 10 Gueses before they lose the game
+#Please refer to the Game Rules File to learn how to play the game
 
 
 import random
@@ -23,10 +20,11 @@ hangman = "_ " * len(random_word)
 
 print(hangman)
 
-#gives the user 10 trys to achieve the word, adds each guess into a list and a binary is created to work the while loop
-guesses = 10
 
 already_guessed = []
+
+#gives the user 10 trys to achieve the word, adds each guess into a list and a binary is created to work the while loop
+guesses = 10
 
 gameplay = True
 
@@ -42,9 +40,13 @@ while gameplay and guesses > 0:
         # add to our guesses and print the list of guesses
         if guessed_letter not in random_word:
             print(guessed_letter, " is not in the word")
-            already_guessed.append(guessed_letter)
-            guesses -= 1
-            print ("Letters you have already guessed", already_guessed)
+            if guessed_letter in already_guessed:
+                print("you already guessed this letter")
+            else:
+                already_guessed.append(guessed_letter)
+                guesses -= 1
+                print ("Letters you have already guessed", already_guessed)
+            
         #elif the letter has already been guessed, let the user know and add to thier guesse attempts
         elif guessed_letter in already_guessed:
             print ("you have guessed this letter already!")
