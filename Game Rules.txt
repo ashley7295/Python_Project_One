@@ -1,1 +1,18 @@
-Test Read Me for Git commit
+
+Instructions on how to play hangman:
+
+
+User is given a blank word. 
+
+The blank word uses underscores to indicate to the user the number of letters in the word as the first clue.
+
+User gets 10 attempts to guess one letter to see if it is in the word. 
+
+If the letter is in the word, the program will tell the user where exactly the letter is in the word.
+
+The user can guess the full word at any point in the game to win.
+
+If the user does not guess the word in 10 tries, they lose the game. 
+
+
+Have Fun!
